@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C11语法 | Zoe's Patio</title><meta name="keywords" content="C++"><meta name="author" content="Zoe"><meta name="copyright" content="Zoe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="更加优雅的C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C11语法">
+<meta property="og:url" content="https://2625792753.github.io/PublicBlog/2021/04/27/C11%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="Zoe&#39;s Patio">
+<meta property="og:description" content="更加优雅的C++">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://2625792753.github.io/PublicBlog/orange">
+<meta property="article:published_time" content="2021-04-27T07:49:04.000Z">
+<meta property="article:modified_time" content="2021-04-27T14:18:05.311Z">
+<meta property="article:author" content="Zoe">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://2625792753.github.io/PublicBlog/orange"><link rel="shortcut icon" href="/PublicBlog/img/favicon.png"><link rel="canonical" href="https://2625792753.github.io/PublicBlog/2021/04/27/C11%E8%AF%AD%E6%B3%95/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/PublicBlog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/PublicBlog/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-04-27 22:18:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/PublicBlog/img/Avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/PublicBlog/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/PublicBlog/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/PublicBlog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/PublicBlog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/PublicBlog/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/PublicBlog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/PublicBlog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/PublicBlog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: orange"><nav id="nav"><span id="blog_name"><a id="site-name" href="/PublicBlog/">Zoe's Patio</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/PublicBlog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/PublicBlog/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/PublicBlog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/PublicBlog/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/PublicBlog/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C11语法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-27T07:49:04.000Z" title="发表于 2021-04-27 15:49:04">2021-04-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-04-27T14:18:05.311Z" title="更新于 2021-04-27 22:18:05">2021-04-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/PublicBlog/categories/Languages/">语言</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C11语法"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="auto类型"><a href="#auto类型" class="headerlink" title="auto类型"></a>auto类型</h3><p><code>auto</code>类型声明使编译器可以通过上下文自动确定变量的类型。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">auto</span> state=<span class="literal">false</span>;</span><br><span class="line"><span class="keyword">auto</span> d=<span class="number">1.23</span>;</span><br></pre></td></tr></table></figure>
+
+<p>i将被声明为int，state将被声明为bool，d将被声明为double。</p>
+<hr>
+<h3 id="基于范围的for循环"><a href="#基于范围的for循环" class="headerlink" title="基于范围的for循环"></a>基于范围的for循环</h3><p>但需要遍历某个容器时可以考虑使用<code>in</code>或<code>:</code>标明容器(或者说范围)。</p>
+<p><del><em>其实就是foreach</em></del></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//#include &lt;vector&gt;</span></span><br><span class="line"><span class="comment">//#include &lt;iostream&gt;</span></span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i &lt; <span class="number">5</span>;i++)</span><br><span class="line">    v.<span class="built_in">push_back</span>(i);</span><br><span class="line"><span class="comment">//for的一般用法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">auto</span> i : v)&#123;</span><br><span class="line">    cout&lt;&lt;i&lt;&lt;endl;</span><br><span class="line">    v.<span class="built_in">pop_back</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//新的for用法</span></span><br></pre></td></tr></table></figure>
+
+<p>下面这个写法标明遍历v这个变长数组，把每个元素作为i。</p>
+<p><strong>这个用法兼容所有的STL数据容器</strong></p>
+<hr>
+<h3 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h3><p>Lambda表达式又称匿名函数。有时候我们希望使用__”一次性函数”__，不想为只使用一次的函数分配名字时就可以用Lambda表达式来书写函数。Lambda表达式的一般书写方式如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[表达式外部变量(及其访问方式)](参数)-&gt;返回值类型&#123;</span><br><span class="line">    函数本体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>来看一个例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[=](<span class="keyword">int</span>&amp; x)-&gt;<span class="keyword">bool</span>&#123;<span class="keyword">return</span> x&gt;<span class="number">1</span>?<span class="literal">true</span>:<span class="literal">false</span>;&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这是个简单的_完整Lambda表达式_，它的意思是输入一个int型引用x，如果x大于1就返回true，否则返回false。</p>
+<p>但实际使用中常常会这么干：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[=](<span class="keyword">int</span>&amp; x)&#123;<span class="keyword">return</span> x&gt;<span class="number">1</span>?<span class="literal">true</span>:<span class="literal">false</span>;&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>如你所见，如果函数内有return语句的话，返回值类型是可以省略的。<del>(<code>-&gt;</code>不写是因为懒)</del></p>
+<h4 id="Lambda函数外部参数表"><a href="#Lambda函数外部参数表" class="headerlink" title="Lambda函数外部参数表"></a>Lambda函数外部参数表</h4><p><code>[=]</code>是这个Lambda表达式的外部变量访问形式表，<code>[=]</code>表示所有的外部变量都以值形式传入，即函数内对他们的修改不会改变他们的”本体”。这个表还有很多种形式：</p>
+<ul>
+<li><code>[&amp;]</code>表示所有的外部变量都以引用形式传入，函数内的修改会影响他们的”本体”。</li>
+<li><code>[=,&amp;a,&amp;b]</code>表示a，b以引用方式传入，其他变量以值形式传入。</li>
+<li><code>[&amp;,a,b]</code>表示a，b以值形式传入，其他变量以引用形式传入。</li>
+</ul>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Zoe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://2625792753.github.io/PublicBlog/2021/04/27/C11%E8%AF%AD%E6%B3%95/">https://2625792753.github.io/PublicBlog/2021/04/27/C11%E8%AF%AD%E6%B3%95/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://2625792753.github.io/PublicBlog" target="_blank">Zoe's Patio</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/PublicBlog/tags/C/">C++</a></div><div class="post_share"><div class="social-share" data-image="/PublicBlog/orange" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/PublicBlog/2021/04/25/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E9%9B%86/"><img class="next-cover" src="https://i.loli.net/2021/04/26/Bn7GOvCP8ZWFzXU.png" onerror="onerror=null;src='/PublicBlog/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MarkDown基本语法集</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/PublicBlog/img/Avatar.png" onerror="this.onerror=null;this.src='/PublicBlog/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Zoe</div><div class="author-info__description">One's Wild Curiosity</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/PublicBlog/archives/"><div class="headline">文章</div><div class="length-num">3</div></a></div><div class="card-info-data-item is-center"><a href="/PublicBlog/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div><div class="card-info-data-item is-center"><a href="/PublicBlog/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/2625792753"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xxxxx" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Idea springs like moon drops</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#auto%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">auto类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%8C%83%E5%9B%B4%E7%9A%84for%E5%BE%AA%E7%8E%AF"><span class="toc-number">2.</span> <span class="toc-text">基于范围的for循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">Lambda表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Lambda%E5%87%BD%E6%95%B0%E5%A4%96%E9%83%A8%E5%8F%82%E6%95%B0%E8%A1%A8"><span class="toc-number">3.1.</span> <span class="toc-text">Lambda函数外部参数表</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/PublicBlog/2021/04/27/C11%E8%AF%AD%E6%B3%95/" title="C11语法"><img src="/PublicBlog/orange" onerror="this.onerror=null;this.src='/PublicBlog/img/404.jpg'" alt="C11语法"/></a><div class="content"><a class="title" href="/PublicBlog/2021/04/27/C11%E8%AF%AD%E6%B3%95/" title="C11语法">C11语法</a><time datetime="2021-04-27T07:49:04.000Z" title="发表于 2021-04-27 15:49:04">2021-04-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/PublicBlog/2021/04/25/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E9%9B%86/" title="MarkDown基本语法集"><img src="https://i.loli.net/2021/04/26/Bn7GOvCP8ZWFzXU.png" onerror="this.onerror=null;this.src='/PublicBlog/img/404.jpg'" alt="MarkDown基本语法集"/></a><div class="content"><a class="title" href="/PublicBlog/2021/04/25/MarkDown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E9%9B%86/" title="MarkDown基本语法集">MarkDown基本语法集</a><time datetime="2021-04-25T07:46:33.000Z" title="发表于 2021-04-25 15:46:33">2021-04-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/PublicBlog/2021/04/25/HelloWorld/" title="Hello World!"><img src="https://i.loli.net/2021/04/26/Bn7GOvCP8ZWFzXU.png" onerror="this.onerror=null;this.src='/PublicBlog/img/404.jpg'" alt="Hello World!"/></a><div class="content"><a class="title" href="/PublicBlog/2021/04/25/HelloWorld/" title="Hello World!">Hello World!</a><time datetime="2021-04-25T05:02:16.000Z" title="发表于 2021-04-25 13:02:16">2021-04-25</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Zoe</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/PublicBlog/js/utils.js"></script><script src="/PublicBlog/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
